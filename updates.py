@@ -5,7 +5,7 @@ DATEFMT = '%d %b %Y'
 
 def updated(*exts):
     '''
-    Get modification time for last-updated file
+    Get modification time for last-updated file given a set of extensions
     '''
 
     upd = 0
@@ -17,3 +17,4 @@ def updated(*exts):
                     upd = mtime if mtime > upd else upd
 
     return datetime.date.fromtimestamp(upd).strftime(DATEFMT)
+
