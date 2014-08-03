@@ -12,7 +12,7 @@ def updated(*exts):
     for dirpath, _, filenames in os.walk('.'):
         for filename in filenames:
             for ext in exts:
-                if filename.endswith(ext):
+                if filename.lower().endswith(ext.lower()):
                     mtime = os.stat(dirpath + '/' + filename).st_mtime
                     upd = mtime if mtime > upd else upd
 
