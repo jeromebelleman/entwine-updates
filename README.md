@@ -1,2 +1,2 @@
 `updated(ext, ext, ...)`
-:   Get modification time for last-updated file given a set of extensions.
+:   Return modification time for last-updated file given a set of extensions.
