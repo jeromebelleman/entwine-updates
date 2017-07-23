@@ -1,5 +1,6 @@
 import os
 import datetime
+import entwinelib
 
 DATEFMT = '%d %b %Y'
 
@@ -13,7 +14,7 @@ def updated(*exts):
         for filename in filenames:
             for ext in exts:
                 if filename.lower().endswith(ext.lower()):
-                    mtime = os.stat(dirpath + '/' + filename).st_mtime
+                    mtime = entwinelib.getmtime(dirpath + '/' + filename)
                     upd = mtime if mtime > upd else upd
 
     return datetime.date.fromtimestamp(upd).strftime(DATEFMT)
